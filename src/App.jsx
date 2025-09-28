@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SearchForm from "./components/SearchForm";
 
 export default function App() {
   const [city, setCity] = useState("");
@@ -20,23 +21,11 @@ export default function App() {
           Weather App - Prototype
         </h1>
 
-        <form onSubmit={handleSubmit} className="flex gap-2">
-          <input
-            type="text"
-            value={city}
-            onChange={handleChange}
-            placeholder="Enter city..."
-            aria-label="City name"
-            className="flex-grow border rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
-          >
-            Search
-          </button>
-        </form>
+        <SearchForm
+          city={city}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
 
         <p className="mt-4 text-sm text-gray-500">
           Prototype mode — the Search button currently logs your input to the
